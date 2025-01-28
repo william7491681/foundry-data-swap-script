@@ -86,6 +86,9 @@ class MainWindow(QMainWindow):
             if os.path.getsize('./meta.json') == 0:
                 json.dump({"sourceDirectory": '', "destinationDirectory": ''}, f, indent=4)
                 return
+            # json file is instantiated but still empty (e.g. user opens and closes application immediately)
+            elif os.path.getsize('./meta.json') == 64:
+                return
             f.seek(0)
             data = json.load(f)
             self.sourceDirectory = data['sourceDirectory']
