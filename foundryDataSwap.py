@@ -1,5 +1,6 @@
 from PyQt6.QtWidgets import QApplication, QMainWindow, QFileDialog, QPushButton, QVBoxLayout, QHBoxLayout, QWidget, QLabel
 from PyQt6.QtCore import Qt, QSize, QTimer
+from PyQt6.QtGui import QIcon
 from platform import system
 import os
 import shutil
@@ -9,9 +10,10 @@ import json
 class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
-
+        app_icon = QIcon("d20.ico")
+        self.setWindowIcon(app_icon)
         self.setWindowTitle("Foundry Data Swapper")
-        self.setFixedSize(QSize(650, 300))
+        self.setFixedSize(QSize(650, 375))
 
         self.destinationFileStruct = QLabel(
 '''Destination Folder Structure:
