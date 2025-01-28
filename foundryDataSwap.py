@@ -105,7 +105,7 @@ class MainWindow(QMainWindow):
         shutil.rmtree(self.destinationDirectory)
         shutil.copytree(self.sourceDirectory, self.destinationDirectory, dirs_exist_ok=True)
 
-        self.submitButton.setText("Submitted!")
+        self.submitButton.setText("Successfully Copied!")
         self.submitButton.setEnabled(False)
 
     def formatFolderStructLabel(self, folderType: str, directory):
